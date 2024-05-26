@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>熱門股</title>
+</head>
+<body>  
+{% block navbar %}
+{% include 'navbar_in.html' %}
+{% endblock %}
+<h2>網頁功能新增中...</h2>
+{% comment %} <div class="container">
+    <table class="stock-table">
+        <thead>
+            <tr>
+                <th>日期</th>
+                <th>代碼</th>
+                <th>名稱</th>
+                <th>成交價</th>
+                <th>漲跌</th>
+                <th>開盤價</th>
+                <th>最高價</th>
+                <th>最低價</th>
+                <th>收盤價</th>
+                <th>成交量</th>   
+            </tr>
+        </thead>
+        <tbody>
+            {% for stocks in top30_stocks %}
+            <tr>
+                <td class="date">{{ stocks.date }}</td>
+                <td class="stock-code">{{ stocks.stock_code }}</td>
+                <td class="stock-name">{{ stocks.stock_name }}</td>
+                <td class="price">{{ stocks.price }}</td>
+                <td class="change">{{ stocks.change }}</td>
+                <td class="open">{{ stocks.open }}</td>
+                <td class="high">{{ stocks.high }}</td>
+                <td class="low">{{ stocks.low }}</td>
+                <td class="close">{{ stocks.close }}</td>
+                <td class="capacity">{{ stocks.capacity }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div> {% endcomment %}
+</body>
+</html>

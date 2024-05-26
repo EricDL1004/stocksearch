@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/img/bg.jpg'); 
+    display: flex;
+    height: 100vh;
+    flex-direction: column; 
+}
+
+h2 {
+    text-align: center;
+}
+
+.bu {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login-container {
+    margin: 125px auto 70px; /* 將上下間距設置為 50px，左右間距自動計算 */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: block; /* 設置為塊級元素 */
+
+
+}
+
+
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #509cee;
+    color: #fff;
+    cursor: pointer;
+}

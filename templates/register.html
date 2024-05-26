@@ -1,0 +1,67 @@
+{% load static %}
+
+{% block title %}
+<title>會員註冊</title>
+{% endblock %}
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+</head>
+<body>
+
+  {% block navbar %}
+  {% include 'navbar.html' %}
+  {% endblock %}
+
+    <br>
+    <div class="register-container">
+        <h2>會員註冊</h2>
+        <form action="/useradd/" method="post">  
+            {% csrf_token %}
+            <div class="form-group mb-4">
+                <label for="email">電子信箱</label>
+                <input type="email" class="form-control form-control-sm" id="email" name="email" placeholder="請輸入您的信箱" required>
+            </div>
+
+            <div class="form-group mb-4">
+                <label for="password">密碼</label>
+                <input type="password" class="form-control form-control-sm" id="password" name="password" placeholder="請輸入密碼" required
+                pattern="^(?=.*[a-z])(?=.*\d).{6,}$" 
+                title="密碼輸入至少需6個、數字、英文字母。">
+            </div>
+
+            <div class="form-group mb-4">
+                <label for="repassword">確認密碼</label>
+                <input type="password" class="form-control form-control-sm" id="repassword" name="repassword" placeholder="請重複輸入密碼" required>
+            </div>
+
+            <div class="form-group mb-4">
+                <label for="phone">手機號碼</label>
+                <input type="text" class="form-control form-control-sm" id="phone" name="phone" placeholder="請輸入您的手機號碼" required>
+            </div>
+            
+            <div class="form-group mb-4">
+                <label for="birthday">生日</label>
+                <input type="date" class="form-control form-control-sm" id="birthday" name="birthday" required>
+            </div>
+            
+            <div class="d-flex justify-content-center mb-4 bg-danger">
+                {{ message }}
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <button type="submit"  class="btn btn-success btn-block btn-lg text-body" id="submit-button">註冊</button>
+            </div>
+            
+            <div class = "buttom_text" >已有帳號了?<a href="/login/" class="buttom_text">登入</a></p>
+            <a class="buttom_text" href="#">聯絡客服</a>
+            </div>    
+        </form>
+    </div>
+{% include 'base.html' %}
+</body>
+</html>

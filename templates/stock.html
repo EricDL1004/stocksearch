@@ -1,0 +1,102 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stock.css' %}">
+    <title>自選股 | 搜股網</title>
+</head>
+<body>
+    {% block navbar %}
+    {% include 'navbar_in.html' %}
+    {% endblock %}
+    
+    {% if error_message %}
+    <script type="text/javascript">
+        alert("{{ error_message }}");
+    </script>
+    {% endif %}
+    
+    <div class="container">
+        <div id="button-section">
+            <div id="group-container">
+                <button class="group" data-group-id="base">群組</button>
+            </div>
+            <div id="operation-container">
+                <button id="edit-button">編輯</button>
+                <button id="add-button">新增</button>
+                <button id="modify-button">修改</button>
+                <button id="delete-button">刪除</button>
+            </div>
+        </div>  
+        <form method="POST" action="{% url 'stock_add' %}">
+            {% csrf_token %}
+            <input class="search-bar" name="stock_code" text="text" placeholder="新增股票代碼">
+            <input type="submit" value="搜尋">
+            <!-- <img src="{% static 'images/setting_icon.png' %}" class="settings-icon" id="settings-icon"> -->
+        </form>             
+        <div class="analysis-group">
+          <button>概覽</button>
+          <button>技術</button>
+          <button>法人</button>
+          <button>主力</button>
+          <button>基本</button>
+        </div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <!-- <th>日期</th> -->
+                        <th>代碼</th>
+                        <th>名稱</th>
+                        <th>成交價</th>
+                        <th>漲跌</th>
+                        <th>開盤價</th>
+                        <th>最高價</th>
+                        <th>最低價</th>
+                        <th>收盤價</th>
+                        <th>成交量</th>                     
+                        <th class="blank">功能</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for stock in stock_list %}
+                    <tr id="stock-{{ forloop.counter }}">
+                        <!--  <td>{{ stock.date}}</td> -->
+                        <td class="company">          
+                            <span class="stock-code">{{ stock.stock_code }}</span>    
+                        </td>                      
+                        <td>
+                            <span class="stock-name">{{ stock.stock_name }}</span>
+                        </td>   
+                        <td class="price">{{ stock.price }}</td>                          
+                        <td class="change" id="change">{{ stock.change }}</td>
+                        <td class="open">{{ stock.open }}</td>
+                        <td class="high">{{ stock.high }}</td>
+                        <td class="low">{{ stock.low }}</td>
+                        <td class="close">{{ stock.close }}</td>
+                        <td class="capacity">{{ stock.capacity }}</td>                
+                        <td>
+                            <form id="delete-form-{{ stock.stock_code }}" method="post" action="{% url 'stock_delete' %}" >
+                                {% csrf_token %}
+                                <input type="hidden" name="stock_code" value="{{ stock.stock_code }}">
+                                <button class="delete-stock" data-stock-id="{{ stock.stock_code }}">刪除</button>
+                            </form>
+                        </td>
+                        <!-- <td><img src="{{ stock.chart_url }}" alt="股票技術圖"></td> -->
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="10">請輸入股票代碼以查詢資訊。</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% include 'base.html' %}
+    <script src="{% static 'js/myscripts.js' %}"></script>
+   
+</body>
+</html>

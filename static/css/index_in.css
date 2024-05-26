@@ -1,0 +1,41 @@
+.carousel-item img {
+  height: 500px; /* 圖片高度固定為 500 像素 */
+  object-fit: fill; /* 保持圖片比例並裁剪到填滿區域 */
+  padding: 0 120px 0 120px;
+}
+.news-msgroll-ul a {
+  display: inline-block;
+  width: 20em; 
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.nav-item.active {
+  font-weight: bold;
+}
+
+.market h2 {
+  margin-top: 10px;
+}
+
+/*會員選單-滑鼠浮動時顯示選單 */
+/* #profileLink:hover #profileMenu {
+  display: block;
+} */
+#profileMenu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*會員選單-滑鼠浮動時顯示選單 */
+#profileMenu {
+  position: absolute;
+  top: 100%; /* 相對於上方的位置 */
+  right: 0; /* 相對於右邊的位置 */
+  display: none;
+  background-color: rgb(239, 237, 237); /* 設定選單的背景顏色 */
+  border: 1px solid #ccc; /* 設定選單的邊框 */
+  padding: 10px; /* 設定選單的內邊距 */
+  z-index: 999; /* 確保選單在其他元素之上 */
+}

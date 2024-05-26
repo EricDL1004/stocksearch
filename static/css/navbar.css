@@ -1,0 +1,14 @@
+#profileLink {
+    position: relative; /* 这将成为 #profileMenu 的定位容器 */
+}
+
+#profileMenu {
+    position: absolute;
+    top: 100%; /* 让菜单显示在头像的下方 */
+    right: 0;
+    display: none; /* 默认不显示 */
+}
+
+.no-bullets {
+    list-style-type: none; /* 这将去除前置的圆点 */
+}

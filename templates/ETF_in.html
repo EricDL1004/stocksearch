@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETF行情</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ETF.css' %}">
+</head>
+<body>
+    {% block navbar %}
+    {% include 'navbar_in.html' %}
+    {% endblock %}
+    <div class="container">
+        <table class="etf-table">
+            <thead>
+                <tr>
+                    <th>代碼</th>
+                    <th>名稱</th>
+                    <th>成交價</th>
+                    <th>最高價</th>
+                    <th>最低價</th>
+                    <th>成交量</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for etf in etfs %}
+                <tr >
+                    <td class="etf-code">{{ etf.etf_code }}</td>
+                    <td class="etf-name">{{ etf.etf_name }}</td>
+                    <td class="etf-close">{{ etf.close }}</td>
+                    <td class="etf-high">{{ etf.high }}</td>
+                    <td class="etf-low">{{ etf.low }}</td>                
+                    <td class="etf-volume">{{ etf.volume }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+{% include 'base.html' %}
+</html>

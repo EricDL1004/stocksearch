@@ -1,0 +1,19 @@
+.carousel-item img {
+  height: 500px; /* 圖片高度固定為 500 像素 */
+  object-fit: fill; /* 保持圖片比例並裁剪到填滿區域 */
+  padding: 0 120px 0 120px;
+}
+.news-msgroll-ul a {
+  display: inline-block;
+  width: 20em; 
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.nav-item.active {
+  font-weight: bold;
+}
+
+.market h2 {
+  margin-top: 10px;
+}

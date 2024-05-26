@@ -1,0 +1,112 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    border: 1px solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    position: relative;
+}
+#button-section {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;    
+}
+#group-container {
+    flex-grow: 1;
+    display: flex;
+    gap: 10px;
+    
+}
+.group {
+    width: 60px;
+    height: 50px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+#operation-container {
+    flex-grow: 0;
+    display: flex;
+    gap: 5px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+#edit-button, #add-button, #modify-button, #delete-button {
+    width: 60px;
+    border-radius: 10px;
+} 
+.search-bar{
+    width: calc(100% - 40%);
+    height: 40px;
+    border: 1px solid gray;
+    padding-left: 30px;
+    background: url('../images/search.jpg') no-repeat scroll 7px 7px;
+    background-size: 24px 24px;
+    display: inline-block;
+}
+.search-submit {
+    width: 40px; 
+    height: 40px; 
+    border: 1px solid gray;
+    background-color: white;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top; /* 確保按鈕與搜尋欄齊平 */
+}
+.search-form {
+    display: flex;
+    gap: 0px;
+    margin-bottom: 20px;
+}
+.delete-stock {
+    margin-left: auto; 
+    border-radius: 10px;
+    width: 60px;
+    height: 40px;
+}
+.analysis-group {
+    display: flex;
+    gap: 0px;
+}
+.analysis-group button {
+    padding: 10px 20px;
+    border: 1px solid gray;
+    cursor: pointer;
+    background-color: white;
+    margin: 0px 3px;
+}
+.analysis-group button:hover {
+    background-color: rgb(186, 186, 186);
+}
+.analysis-group button:first-child {
+    margin-left: 0;
+}
+.blank{
+    width: 100px;
+    height: 50px;
+}
+table{
+    border:1px solid black;
+    width: 100%; 
+    text-align: center;
+    border-collapse: collapse; 
+    table-layout: fixed; 
+
+}
+th ,td{            
+     
+    padding: 10px;
+    text-align: center;
+    word-break: break-all;
+    border: 1px solid black;
+}
+th {
+    background-color: rgb(229, 229, 229);
+}
+
