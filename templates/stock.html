@@ -47,7 +47,6 @@
             <table>
                 <thead>
                     <tr>
-                        <!-- <th>日期</th> -->
                         <th>代碼</th>
                         <th>名稱</th>
                         <th>成交價</th>
@@ -84,7 +83,6 @@
                                 <button class="delete-stock" data-stock-id="{{ stock.stock_code }}">刪除</button>
                             </form>
                         </td>
-                        <!-- <td><img src="{{ stock.chart_url }}" alt="股票技術圖"></td> -->
                     </tr>
                     {% empty %}
                     <tr>
@@ -97,6 +95,5 @@
     </div>
     {% include 'base.html' %}
     <script src="{% static 'js/myscripts.js' %}"></script>
-   
 </body>
 </html>

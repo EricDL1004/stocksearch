@@ -6,17 +6,17 @@
     <title>List</title>
 </head>
 <body>
-        <!-- resultList從 views 傳過來，再放進 data 這裡 -->
-        <h1>{{errormessage}}</h1>
-        {% for data in resultList %}
-            <h2>顯示 student 資料表的資料 </h2>
-            cID: {{data.cID }}<br>
-            cName: {{data.cName }}<br>
-            cSex: {{data.cSex }}<br>
-            cBirthday: {{data.cBirthday | date:'Y-m-d' }}<br>
-            cEmail: {{data.cEmail }}<br>
-            cPhone: {{data.cPhone }}<br>
-            cAddr: {{data.cAddr }}<br>
-        {% endfor %}
+    <!-- resultList從 views 傳過來，再放進 data 這裡 -->
+    <h1>{{errormessage}}</h1>
+    {% for data in resultList %}
+    <h2>顯示 student 資料表的資料 </h2>
+    cID: {{data.cID }}<br>
+    cName: {{data.cName }}<br>
+    cSex: {{data.cSex }}<br>
+    cBirthday: {{data.cBirthday | date:'Y-m-d' }}<br>
+    cEmail: {{data.cEmail }}<br>
+    cPhone: {{data.cPhone }}<br>
+    cAddr: {{data.cAddr }}<br>
+    {% endfor %}
 </body>
 </html>
