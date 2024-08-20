@@ -11,7 +11,7 @@
 ## 使用工具：
 *  前端使用HTML、CSS、Javascript
 *  後端使用Django、Python
-*  資料庫使用MySQL/SQLite
+*  資料庫使用ORM(MySQL/SQLite)
 
 ## 前端顯示：
 * 主頁顯示大盤技術分析圖。
